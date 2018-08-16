@@ -14,7 +14,7 @@ def hbnb():
     return 'HBNB!'
 @app.route('/c/<text>', strict_slashes=False)
 def show_text(text):
-    {{ 'text' | replace("_", " ") }}
+    echo 'text' | replace("_", " ")
     return 'C%s' % text
 
 if __name__ == '__main__':
