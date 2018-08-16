@@ -19,7 +19,7 @@ def show_text(text):
 @app.route('/python', strict_slashes=False)
 @app.route('/python/', strict_slashes=False)
 @app.route('/python/<string:text>', strict_slashes=False)
-def show_default_text(text="is_cool"):
+def show_default_text(text="is cool"):
     text.replace("_", " ")
     return 'Python %s' % text
 
