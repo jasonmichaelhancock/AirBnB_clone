@@ -26,7 +26,7 @@ def show_default_text(text="is cool"):
     text.replace("_", " ")
     return 'Python %s' % text
 
-@app.route('/number/<n>', strict_slashes=False)
+@app.route('/number/<int:n>', strict_slashes=False)
 def is_number(n):
     if isinstance(n, int):
         return "{} is a number".format(n)
