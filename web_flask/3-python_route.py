@@ -19,7 +19,7 @@ def show_text(text):
 @app.route('/python/<text>', strict_slashes=False)
 def show_default_text(text=cool):
     text.replace("_", " ")
-    return 'C %s' % text
+    return 'Python %s' % text
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
