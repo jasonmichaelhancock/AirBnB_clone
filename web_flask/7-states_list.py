@@ -3,9 +3,10 @@
 '''Script that starts a Flask web application.'''
 
 from flask import Flask, render_template
-from models import storage
+from models import *
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 
 
 @app.teardown_appcontext
@@ -13,12 +14,12 @@ def teardown_db(exception):
     storage.close()
 
 
-@app.route('/states_list', strict_slashes=False)
-def states_list():
-    states = []
-    for key, value in storage.all('State').items():
-        states.append(value)
-    return render_template('7-states_list.html', states=states)
+@app.route('/states_list')
+def html_fetch_states():
+    '''Script that starts a Flask web application.'''
+    state_objs = [s for s in storage.all("State").values()]
+    return render_template('7-states_list.html',
+                           state_objs=state_objs)
 
 
 if __name__ == '__main__':
