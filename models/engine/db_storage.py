@@ -1,9 +1,5 @@
 #!/usr/bin/python3
 '''
-    DBStorage Engine
-'''
-#!/usr/bin/python3
-'''
     Define class DatabaseStorage
 '''
 from os import getenv
